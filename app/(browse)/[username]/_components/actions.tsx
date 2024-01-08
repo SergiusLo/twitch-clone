@@ -32,7 +32,6 @@ export const Actions = ({ isFollowing, userId }: ActionsProps) => {
         .catch(() => toast.error("Something went wrong"));
     });
   };
-
   const onClick = () => {
     if (isFollowing) {
       handleUnfollow();
@@ -40,7 +39,6 @@ export const Actions = ({ isFollowing, userId }: ActionsProps) => {
       handleFollow();
     }
   };
-
   return (
     <Button disabled={isPending} onClick={onClick} variant="primary">
       {isFollowing ? "Unfollow" : "Follow"}

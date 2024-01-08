@@ -15,7 +15,7 @@ model User {
   bio String? 
 
   following Follow[] @relation("Following")
-  FollowedBy Follow[] @relation("FollowedBy")
+  followedBy Follow[] @relation("FollowedBy")
 
 
   createdAt DateTime @default(now())
@@ -29,7 +29,6 @@ model Follow {
   followingId String
 
   follower User @relation(name: "Following", fields: [followerId], references: [id], onDelete: Cascade)
-
   following User @relation(name: "FollowedBy", fields: [followingId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
@@ -38,6 +37,4 @@ model Follow {
   @@unique([followerId, followingId])
   @@index([followerId])
   @@index([followingId])
-
-
 }
