@@ -1,12 +1,14 @@
-import Navigation from './navigation';
-import Toggle from './toggle';
-import { Wrapper } from './wrapper';
+import Navigation from "./navigation";
+import Toggle from "./toggle";
+import { Wrapper } from "./wrapper";
 
 const Sidebar = () => {
-  return <Wrapper>
-    <Toggle/>
-    <Navigation/>
-  </Wrapper>;
+  return (
+    <Wrapper>
+      <Toggle />
+      <Navigation />
+    </Wrapper>
+  );
 };
 
 export default Sidebar;
